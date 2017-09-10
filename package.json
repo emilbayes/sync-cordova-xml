@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "tape test.js"
+    "test": "true"
   },
   "bin": {
     "sync-cordova-xml": "bin/sync.js"
