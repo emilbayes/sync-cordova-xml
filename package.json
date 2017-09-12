@@ -1,6 +1,6 @@
 {
   "name": "sync-cordova-xml",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Sync Cordova's XML files with your package.json",
   "main": "index.js",
   "dependencies": {
