@@ -2,4 +2,6 @@
 <plugin version="1.1.0" id="plugin" xmlns="http://www.w3.org/ns/widgets">
     <name>plugin</name>
     <description></description>
+    <repo />
+    <author />
 </plugin>

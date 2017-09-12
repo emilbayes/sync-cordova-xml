@@ -11,6 +11,25 @@ sync(require('./package.json'), xmlString, 'plugin')
 
 ```
 
+This module will synchronise:
+
+* `.version` => `/@version`
+* `.name` => `/name`
+* `.description` => `/description`
+
+For plugins it will additionally attempt to set:
+
+* `.name` => `/@id`
+* `.license` => `/license`
+* `.keywords[]` => `/keywords` joined to comma delimited string
+
+* `.repository.url` => `/repo` (OR simply use `.repository` if string)
+* `.bugs.url` => `/issue`
+* `.author` as string will be parsed into the next properties
+* `.author.name` => `/author`
+* `.author.url` => `/author/@href`
+* `.author.email` => `/author/@email`
+
 ## CLI
 
 ```sh
