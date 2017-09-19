@@ -36,10 +36,10 @@ For plugins it will additionally attempt to set:
 sync-cordova-xml [--plugin] [--output=plugin.xml] package.json plugin.xml
 ```
 
-You can add this script to your `package.json`:
+You can add this script to your `package.json` for automatic sync on each `npm version`:
 
 ```json
-"version": "sync-cordova-xml package.json config.xml --output=config.xml"
+"version": "sync-cordova-xml package.json config.xml --output=config.xml && git add config.xml"
 ```
 
 ## API
