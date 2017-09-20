@@ -10,7 +10,12 @@ var argv = require('minimist')(process.argv.slice(2), {
 })
 
 var i = 2
-var mode = argv.plugin === true ? 'plugin' : 'config'
+var mode = 'config'
+
+if (argv._[1].endsWith('plugin.xml')) mode = 'plugin'
+if (argv._[1].endsWith('config.xml')) mode = 'config'
+if (argv.plugin === true) mode = 'plugin'
+if (argv.config === true) mode = 'config'
 
 try {
   var pkg = JSON.parse(fs.readFileSync(argv._[0]).toString())

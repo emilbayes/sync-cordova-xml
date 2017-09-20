@@ -19,7 +19,8 @@ This module will synchronise:
 
 For plugins it will additionally attempt to set:
 
-* `.name` => `/@id`
+* `.name` => `/@id`. Note that as a quirk, cordova will trim the npm scope off this when installing.
+  This plugin will remove scope from the `/@id` to avoid the issue
 * `.license` => `/license`
 * `.keywords[]` => `/keywords` joined to comma delimited string
 
@@ -33,8 +34,12 @@ For plugins it will additionally attempt to set:
 ## CLI
 
 ```sh
-sync-cordova-xml [--plugin] [--output=plugin.xml] package.json plugin.xml
+sync-cordova-xml [--plugin|--config] [--output=plugin.xml] package.json plugin.xml
 ```
+
+**NOTE**: For convenience the CLI will guess the mode from the 2nd argument
+filename. To absolutely force either mode, regardless of filename, use the one
+of the flags.
 
 You can add this script to your `package.json` for automatic sync on each `npm version`:
 
