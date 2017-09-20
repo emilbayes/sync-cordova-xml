@@ -10,7 +10,7 @@ module.exports = function (jsonObj, xmlStr, mode) {
   if (jsonObj.version) xmlDoc.documentElement.setAttribute('version', jsonObj.version)
 
   if (jsonObj.name) {
-    if (mode === 'plugin') xmlDoc.documentElement.setAttribute('id', jsonObj.name)
+    if (mode === 'plugin') xmlDoc.documentElement.setAttribute('id', trimScope(jsonObj.name))
     upsertNode(xmlDoc.documentElement, 'name', {}, jsonObj.name)
   }
 
@@ -65,4 +65,9 @@ module.exports = function (jsonObj, xmlStr, mode) {
       parent.appendChild(nl) // Insert new line again
     }
   }
+}
+
+
+function trimScope (str) {
+  return str.replace(/^@[^/]+\//, '')
 }
