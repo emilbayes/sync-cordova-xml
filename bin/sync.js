@@ -33,5 +33,5 @@ try {
 
 var out = process.stdout
 if (argv.output) out = fs.createWriteStream(argv.output)
-out.write(sync(pkg, xml, 'plugin'))
+out.write(sync(pkg, xml, mode))
 out.write('\n')
