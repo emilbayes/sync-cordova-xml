@@ -17,6 +17,10 @@ This module will synchronise:
 * `.name` => `/name`
 * `.description` => `/description`
 
+For application it will attemt to set:
+
+* `.displayName` => `/name`, display name being a cordova convention
+
 For plugins it will additionally attempt to set:
 
 * `.name` => `/@id`. Note that as a quirk, cordova will trim the npm scope off this when installing.

@@ -14,6 +14,11 @@ module.exports = function (jsonObj, xmlStr, mode) {
     upsertNode(xmlDoc.documentElement, 'name', {}, jsonObj.name)
   }
 
+  // displayName is a cordova convention
+  if (jsonObj.displayName && mode === 'config') {
+    upsertNode(xmlDoc.documentElement, 'name', {}, jsonObj.displayName)
+  }
+
   if (jsonObj.description) {
     upsertNode(xmlDoc.documentElement, 'description', {}, jsonObj.description)
   }
